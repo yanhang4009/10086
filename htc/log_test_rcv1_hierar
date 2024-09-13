@@ -1,0 +1,416 @@
+2024-07-21 09:34:28 : WARNING  Not exists dict_rcv1/doc_label.dict for doc_label
+2024-07-21 09:34:28 : WARNING  Not exists dict_rcv1/doc_token.dict for doc_token
+2024-07-21 09:34:28 : WARNING  Not exists dict_rcv1/doc_char.dict for doc_char
+2024-07-21 09:34:28 : WARNING  Not exists dict_rcv1/doc_token_ngram.dict for doc_token_ngram
+2024-07-21 09:34:28 : WARNING  Not exists dict_rcv1/doc_keyword.dict for doc_keyword
+2024-07-21 09:34:28 : WARNING  Not exists dict_rcv1/doc_topic.dict for doc_topic
+2024-07-21 14:47:27 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 14:47:27 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 14:47:27 : DEBUG  Loading model cost 0.589 seconds.
+2024-07-21 14:47:27 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 14:49:13 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 14:49:13 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 14:49:13 : DEBUG  Loading model cost 0.576 seconds.
+2024-07-21 14:49:13 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 14:50:10 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 14:50:10 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 14:50:10 : DEBUG  Loading model cost 0.579 seconds.
+2024-07-21 14:50:10 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 14:51:03 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 14:51:03 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 14:51:04 : DEBUG  Loading model cost 0.592 seconds.
+2024-07-21 14:51:04 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 14:52:13 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 14:52:13 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 14:52:14 : DEBUG  Loading model cost 0.592 seconds.
+2024-07-21 14:52:14 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 15:22:01 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 15:22:01 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 15:22:01 : DEBUG  Loading model cost 0.589 seconds.
+2024-07-21 15:22:01 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 15:28:29 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 15:28:29 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 15:28:30 : DEBUG  Loading model cost 0.588 seconds.
+2024-07-21 15:28:30 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 15:43:37 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 15:43:37 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 15:43:38 : DEBUG  Loading model cost 0.606 seconds.
+2024-07-21 15:43:38 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 16:04:27 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 16:04:27 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 16:04:28 : DEBUG  Loading model cost 0.593 seconds.
+2024-07-21 16:04:28 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 16:05:34 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 16:05:34 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 16:05:34 : DEBUG  Loading model cost 0.607 seconds.
+2024-07-21 16:05:34 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 16:06:03 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 16:06:03 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 16:06:04 : DEBUG  Loading model cost 0.580 seconds.
+2024-07-21 16:06:04 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 16:07:55 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 16:07:55 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 16:07:55 : DEBUG  Loading model cost 0.589 seconds.
+2024-07-21 16:07:55 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 16:08:48 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 16:08:48 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 16:08:48 : DEBUG  Loading model cost 0.574 seconds.
+2024-07-21 16:08:48 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 16:11:16 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 16:11:16 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 16:11:16 : DEBUG  Loading model cost 0.586 seconds.
+2024-07-21 16:11:16 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 16:12:48 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 16:12:48 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 16:12:48 : DEBUG  Loading model cost 0.574 seconds.
+2024-07-21 16:12:48 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 16:14:15 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 16:14:15 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 16:14:15 : DEBUG  Loading model cost 0.581 seconds.
+2024-07-21 16:14:15 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 16:15:12 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 16:15:12 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 16:15:12 : DEBUG  Loading model cost 0.570 seconds.
+2024-07-21 16:15:12 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 16:15:32 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 16:15:32 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 16:15:32 : DEBUG  Loading model cost 0.573 seconds.
+2024-07-21 16:15:32 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 16:22:09 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 16:22:09 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 16:22:09 : DEBUG  Loading model cost 0.566 seconds.
+2024-07-21 16:22:09 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 16:23:10 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 16:23:10 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 16:23:11 : DEBUG  Loading model cost 0.567 seconds.
+2024-07-21 16:23:11 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 16:25:08 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 16:25:08 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 16:25:09 : DEBUG  Loading model cost 0.579 seconds.
+2024-07-21 16:25:09 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 16:29:15 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 16:29:15 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 16:29:16 : DEBUG  Loading model cost 0.594 seconds.
+2024-07-21 16:29:16 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 17:33:09 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 17:33:09 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 17:33:09 : DEBUG  Loading model cost 0.563 seconds.
+2024-07-21 17:33:09 : DEBUG  Prefix dict has been built successfully.
+2024-07-21 17:40:26 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-21 17:40:26 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-21 17:40:26 : DEBUG  Loading model cost 0.585 seconds.
+2024-07-21 17:40:26 : DEBUG  Prefix dict has been built successfully.
+2024-07-23 15:39:35 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-23 15:39:35 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-23 15:39:36 : DEBUG  Loading model cost 0.583 seconds.
+2024-07-23 15:39:36 : DEBUG  Prefix dict has been built successfully.
+2024-07-23 17:01:46 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-23 17:01:46 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-23 17:01:47 : DEBUG  Loading model cost 0.610 seconds.
+2024-07-23 17:01:47 : DEBUG  Prefix dict has been built successfully.
+2024-07-23 20:07:57 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-23 20:07:57 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-23 20:07:57 : DEBUG  Loading model cost 0.666 seconds.
+2024-07-23 20:07:57 : DEBUG  Prefix dict has been built successfully.
+2024-07-23 20:44:49 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-23 20:44:49 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-23 20:44:50 : DEBUG  Loading model cost 0.582 seconds.
+2024-07-23 20:44:50 : DEBUG  Prefix dict has been built successfully.
+2024-07-23 20:50:05 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-23 20:50:05 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-23 20:50:06 : DEBUG  Loading model cost 0.589 seconds.
+2024-07-23 20:50:06 : DEBUG  Prefix dict has been built successfully.
+2024-07-23 20:55:57 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-23 20:55:57 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-23 20:55:58 : DEBUG  Loading model cost 0.572 seconds.
+2024-07-23 20:55:58 : DEBUG  Prefix dict has been built successfully.
+2024-07-23 20:57:50 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-23 20:57:50 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-23 20:57:50 : DEBUG  Loading model cost 0.610 seconds.
+2024-07-23 20:57:50 : DEBUG  Prefix dict has been built successfully.
+2024-07-23 20:58:45 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-23 20:58:45 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-23 20:58:45 : DEBUG  Loading model cost 0.584 seconds.
+2024-07-23 20:58:45 : DEBUG  Prefix dict has been built successfully.
+2024-07-23 21:00:32 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-23 21:00:32 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-23 21:00:33 : DEBUG  Loading model cost 0.562 seconds.
+2024-07-23 21:00:33 : DEBUG  Prefix dict has been built successfully.
+2024-07-23 21:41:04 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-23 21:41:04 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-23 21:41:04 : DEBUG  Loading model cost 0.588 seconds.
+2024-07-23 21:41:04 : DEBUG  Prefix dict has been built successfully.
+2024-07-24 10:18:23 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-24 10:18:23 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-24 10:18:24 : DEBUG  Loading model cost 0.590 seconds.
+2024-07-24 10:18:24 : DEBUG  Prefix dict has been built successfully.
+2024-07-24 10:28:50 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-24 10:28:50 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-24 10:28:50 : DEBUG  Loading model cost 0.589 seconds.
+2024-07-24 10:28:50 : DEBUG  Prefix dict has been built successfully.
+2024-07-24 10:33:28 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-24 10:33:28 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-24 10:33:29 : DEBUG  Loading model cost 0.564 seconds.
+2024-07-24 10:33:29 : DEBUG  Prefix dict has been built successfully.
+2024-07-24 10:38:23 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-24 10:38:23 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-24 10:38:23 : DEBUG  Loading model cost 0.584 seconds.
+2024-07-24 10:38:23 : DEBUG  Prefix dict has been built successfully.
+2024-07-24 10:40:33 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-24 10:40:33 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-24 10:40:34 : DEBUG  Loading model cost 0.551 seconds.
+2024-07-24 10:40:34 : DEBUG  Prefix dict has been built successfully.
+2024-07-24 10:42:27 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-24 10:42:27 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-24 10:42:27 : DEBUG  Loading model cost 0.587 seconds.
+2024-07-24 10:42:27 : DEBUG  Prefix dict has been built successfully.
+2024-07-24 10:45:44 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-24 10:45:44 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-24 10:45:45 : DEBUG  Loading model cost 0.578 seconds.
+2024-07-24 10:45:45 : DEBUG  Prefix dict has been built successfully.
+2024-07-24 10:59:14 : DEBUG  Building prefix dict from the default dictionary ...
+2024-07-24 10:59:14 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-07-24 10:59:14 : DEBUG  Loading model cost 0.583 seconds.
+2024-07-24 10:59:14 : DEBUG  Prefix dict has been built successfully.
+2024-08-01 20:14:38 : DEBUG  Building prefix dict from the default dictionary ...
+2024-08-01 20:14:39 : DEBUG  Dumping model to file cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-08-01 20:14:39 : DEBUG  Loading model cost 0.684 seconds.
+2024-08-01 20:14:39 : DEBUG  Prefix dict has been built successfully.
+2024-08-01 20:16:11 : DEBUG  Building prefix dict from the default dictionary ...
+2024-08-01 20:16:11 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-08-01 20:16:11 : DEBUG  Loading model cost 0.646 seconds.
+2024-08-01 20:16:11 : DEBUG  Prefix dict has been built successfully.
+2024-09-08 08:32:40 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-08 08:32:40 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-09-08 08:32:41 : DEBUG  Loading model cost 0.598 seconds.
+2024-09-08 08:32:41 : DEBUG  Prefix dict has been built successfully.
+2024-09-08 08:39:32 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-08 08:39:32 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-09-08 08:39:33 : DEBUG  Loading model cost 0.558 seconds.
+2024-09-08 08:39:33 : DEBUG  Prefix dict has been built successfully.
+2024-09-08 14:58:13 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-08 14:58:13 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-09-08 14:58:13 : DEBUG  Loading model cost 0.593 seconds.
+2024-09-08 14:58:13 : DEBUG  Prefix dict has been built successfully.
+2024-09-08 17:25:39 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-08 17:25:39 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-09-08 17:25:39 : DEBUG  Loading model cost 0.583 seconds.
+2024-09-08 17:25:39 : DEBUG  Prefix dict has been built successfully.
+2024-09-08 18:39:39 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-08 18:39:39 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-09-08 18:39:40 : DEBUG  Loading model cost 0.580 seconds.
+2024-09-08 18:39:40 : DEBUG  Prefix dict has been built successfully.
+2024-09-09 11:36:17 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-09 11:36:17 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-09-09 11:36:17 : DEBUG  Loading model cost 0.639 seconds.
+2024-09-09 11:36:17 : DEBUG  Prefix dict has been built successfully.
+2024-09-09 11:49:36 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-09 11:49:36 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-09-09 11:49:37 : DEBUG  Loading model cost 1.154 seconds.
+2024-09-09 11:49:37 : DEBUG  Prefix dict has been built successfully.
+2024-09-09 17:06:14 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-09 17:06:14 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-09-09 17:06:15 : DEBUG  Loading model cost 0.662 seconds.
+2024-09-09 17:06:15 : DEBUG  Prefix dict has been built successfully.
+2024-09-09 17:11:35 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-09 17:11:35 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-09-09 17:11:35 : DEBUG  Loading model cost 0.705 seconds.
+2024-09-09 17:11:35 : DEBUG  Prefix dict has been built successfully.
+2024-09-09 17:16:43 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-09 17:16:43 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-09-09 17:16:43 : DEBUG  Loading model cost 0.645 seconds.
+2024-09-09 17:16:43 : DEBUG  Prefix dict has been built successfully.
+2024-09-09 17:17:56 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-09 17:17:56 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-09-09 17:17:57 : DEBUG  Loading model cost 0.642 seconds.
+2024-09-09 17:17:57 : DEBUG  Prefix dict has been built successfully.
+2024-09-10 19:40:30 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-10 19:40:30 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-09-10 19:40:30 : DEBUG  Loading model cost 0.631 seconds.
+2024-09-10 19:40:30 : DEBUG  Prefix dict has been built successfully.
+2024-09-11 14:11:21 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-11 14:11:21 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-09-11 14:11:22 : DEBUG  Loading model cost 0.586 seconds.
+2024-09-11 14:11:22 : DEBUG  Prefix dict has been built successfully.
+2024-09-11 14:13:50 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-11 14:13:50 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-09-11 14:13:50 : DEBUG  Loading model cost 0.566 seconds.
+2024-09-11 14:13:50 : DEBUG  Prefix dict has been built successfully.
+2024-09-11 16:59:35 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-11 16:59:35 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-09-11 16:59:36 : DEBUG  Loading model cost 1.038 seconds.
+2024-09-11 16:59:36 : DEBUG  Prefix dict has been built successfully.
+2024-09-11 19:34:22 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-11 19:34:22 : DEBUG  Loading model from cache C:\Users\Gabriel\AppData\Local\Temp\jieba.cache
+2024-09-11 19:34:23 : DEBUG  Loading model cost 1.052 seconds.
+2024-09-11 19:34:23 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 15:23:24 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 15:23:24 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 15:23:24 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 15:23:24 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmprdzcyr8s' -> '/tmp/jieba.cache'
+2024-09-12 15:23:25 : DEBUG  Loading model cost 0.687 seconds.
+2024-09-12 15:23:25 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 15:25:38 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 15:25:38 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 15:25:38 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 15:25:39 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmp7vdm24l6' -> '/tmp/jieba.cache'
+2024-09-12 15:25:39 : DEBUG  Loading model cost 0.612 seconds.
+2024-09-12 15:25:39 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 15:27:13 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 15:27:13 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 15:27:14 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 15:27:14 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmp1tmj1g0p' -> '/tmp/jieba.cache'
+2024-09-12 15:27:14 : DEBUG  Loading model cost 0.614 seconds.
+2024-09-12 15:27:14 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 15:28:19 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 15:28:19 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 15:28:19 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 15:28:19 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmp2sb0z0n3' -> '/tmp/jieba.cache'
+2024-09-12 15:28:19 : DEBUG  Loading model cost 0.599 seconds.
+2024-09-12 15:28:19 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 15:30:54 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 15:30:54 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 15:30:55 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 15:30:55 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmpivz1d47h' -> '/tmp/jieba.cache'
+2024-09-12 15:30:55 : DEBUG  Loading model cost 0.634 seconds.
+2024-09-12 15:30:55 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 15:32:34 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 15:32:34 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 15:32:35 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 15:32:35 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmptiyc7l8f' -> '/tmp/jieba.cache'
+2024-09-12 15:32:35 : DEBUG  Loading model cost 0.621 seconds.
+2024-09-12 15:32:35 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 15:33:15 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 15:33:15 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 15:33:15 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 15:33:15 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmpqzsoxxdg' -> '/tmp/jieba.cache'
+2024-09-12 15:33:15 : DEBUG  Loading model cost 0.615 seconds.
+2024-09-12 15:33:15 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 15:33:57 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 15:33:57 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 15:33:57 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 15:33:57 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmpcobhhj5e' -> '/tmp/jieba.cache'
+2024-09-12 15:33:57 : DEBUG  Loading model cost 0.636 seconds.
+2024-09-12 15:33:57 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 15:35:32 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 15:35:32 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 15:35:33 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 15:35:33 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmpva4l62qb' -> '/tmp/jieba.cache'
+2024-09-12 15:35:33 : DEBUG  Loading model cost 0.615 seconds.
+2024-09-12 15:35:33 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 15:37:03 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 15:37:03 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 15:37:03 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 15:37:03 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmpuph70c7i' -> '/tmp/jieba.cache'
+2024-09-12 15:37:03 : DEBUG  Loading model cost 0.581 seconds.
+2024-09-12 15:37:03 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 15:39:42 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 15:39:42 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 15:39:42 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 15:39:42 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmpn6ltt7hi' -> '/tmp/jieba.cache'
+2024-09-12 15:39:42 : DEBUG  Loading model cost 0.592 seconds.
+2024-09-12 15:39:42 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 15:40:45 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 15:40:45 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 15:40:46 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 15:40:46 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmp86yptk32' -> '/tmp/jieba.cache'
+2024-09-12 15:40:46 : DEBUG  Loading model cost 0.626 seconds.
+2024-09-12 15:40:46 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 15:41:52 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 15:41:52 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 15:41:53 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 15:41:53 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmpe1oy6d2_' -> '/tmp/jieba.cache'
+2024-09-12 15:41:53 : DEBUG  Loading model cost 0.635 seconds.
+2024-09-12 15:41:53 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 15:42:25 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 15:42:25 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 15:42:26 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 15:42:26 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmp1n5umd3h' -> '/tmp/jieba.cache'
+2024-09-12 15:42:26 : DEBUG  Loading model cost 0.623 seconds.
+2024-09-12 15:42:26 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 15:44:25 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 15:44:25 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 15:44:26 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 15:44:26 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmpprpzqqzk' -> '/tmp/jieba.cache'
+2024-09-12 15:44:26 : DEBUG  Loading model cost 0.603 seconds.
+2024-09-12 15:44:26 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 15:52:10 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 15:52:10 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 15:52:10 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 15:52:10 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmpuap_b90x' -> '/tmp/jieba.cache'
+2024-09-12 15:52:10 : DEBUG  Loading model cost 0.607 seconds.
+2024-09-12 15:52:10 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 15:54:45 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 15:54:45 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 15:54:46 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 15:54:46 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmpoyz4cn1p' -> '/tmp/jieba.cache'
+2024-09-12 15:54:46 : DEBUG  Loading model cost 0.593 seconds.
+2024-09-12 15:54:46 : DEBUG  Prefix dict has been built successfully.

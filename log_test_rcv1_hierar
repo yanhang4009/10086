@@ -1,0 +1,76 @@
+2024-09-12 18:15:52 : WARNING  Not exists dict_rcv1/doc_label.dict for doc_label
+2024-09-12 18:15:52 : WARNING  Not exists dict_rcv1/doc_token.dict for doc_token
+2024-09-12 18:15:52 : WARNING  Not exists dict_rcv1/doc_char.dict for doc_char
+2024-09-12 18:15:52 : WARNING  Not exists dict_rcv1/doc_token_ngram.dict for doc_token_ngram
+2024-09-12 18:15:52 : WARNING  Not exists dict_rcv1/doc_keyword.dict for doc_keyword
+2024-09-12 18:15:52 : WARNING  Not exists dict_rcv1/doc_topic.dict for doc_topic
+2024-09-12 18:19:31 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 18:19:31 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 18:19:31 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 18:19:31 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmpcxqodt18' -> '/tmp/jieba.cache'
+2024-09-12 18:19:31 : DEBUG  Loading model cost 0.675 seconds.
+2024-09-12 18:19:31 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 18:20:05 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 18:20:05 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 18:20:06 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 18:20:06 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmpjb70ispf' -> '/tmp/jieba.cache'
+2024-09-12 18:20:06 : DEBUG  Loading model cost 0.648 seconds.
+2024-09-12 18:20:06 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 18:21:13 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 18:21:13 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 18:21:14 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 18:21:14 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmpjhdav0xn' -> '/tmp/jieba.cache'
+2024-09-12 18:21:14 : DEBUG  Loading model cost 0.673 seconds.
+2024-09-12 18:21:14 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 20:36:49 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 20:36:49 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 20:36:49 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 20:36:49 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmp7le4zf8r' -> '/tmp/jieba.cache'
+2024-09-12 20:36:49 : DEBUG  Loading model cost 0.630 seconds.
+2024-09-12 20:36:49 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 20:38:21 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 20:38:21 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 20:38:21 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 20:38:21 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmpzj1_dgve' -> '/tmp/jieba.cache'
+2024-09-12 20:38:21 : DEBUG  Loading model cost 0.567 seconds.
+2024-09-12 20:38:21 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 20:39:24 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 20:39:24 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 20:39:25 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 20:39:25 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmpmf0f2ome' -> '/tmp/jieba.cache'
+2024-09-12 20:39:25 : DEBUG  Loading model cost 0.635 seconds.
+2024-09-12 20:39:25 : DEBUG  Prefix dict has been built successfully.
+2024-09-12 20:40:04 : DEBUG  Building prefix dict from the default dictionary ...
+2024-09-12 20:40:04 : DEBUG  Loading model from cache /tmp/jieba.cache
+2024-09-12 20:40:05 : DEBUG  Dumping model to file cache /tmp/jieba.cache
+2024-09-12 20:40:05 : ERROR  Dump cache file failed.
+Traceback (most recent call last):
+  File "/data/xrm/anaconda3/envs/chatglm/lib/python3.10/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmpo5j7c5_y' -> '/tmp/jieba.cache'
+2024-09-12 20:40:05 : DEBUG  Loading model cost 0.637 seconds.
+2024-09-12 20:40:05 : DEBUG  Prefix dict has been built successfully.

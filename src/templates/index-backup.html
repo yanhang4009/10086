@@ -1,0 +1,1250 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>移动项目</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{url_for('static', path='css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', path='css/app.css')}}" rel="stylesheet">
+    <script src="{{url_for('static', path='js/jquery-3.4.1.min.js')}}"></script>
+    <script src="{{url_for('static', path='js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static', path='js/app.js')}}"></script>
+    <script src="{{url_for('static', path='js/dirList.js')}}"></script>
+    <script src="{{url_for('static', path='js/d3.v7.min.js')}}"></script>
+    <style>
+        .tree-container {
+            display: grid;
+            grid-template-columns: repeat(2, 45%); /* 每个div占宽度的45% */
+            gap: 10%;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 15px;
+            box-sizing: border-box;
+            background-color: #f0f0f0; /* 背景色用于可视化容器 */
+            margin-bottom: -20px;
+        }
+
+        .container {
+            width: 100%;
+            height: 40vh;
+            padding: 25px;
+            box-sizing: border-box;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto; /* 使容器可上下滚动 */
+            margin: 0 auto;
+        }
+
+        .node circle {
+            fill: #999;
+            stroke: steelblue;
+            stroke-width: 3px;
+        }
+
+        .node text {
+            font-size: 12px;
+            font-family: sans-serif;
+        }
+
+        .link {
+            fill: none;
+            stroke: #ccc;
+            stroke-width: 2px;
+        }
+
+        .tree, .tree ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .tree ul {
+            margin-left: 20px;
+        }
+
+        .tree li {
+            margin: 5px 0;
+            padding: 5px;
+            position: relative;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .tree li:hover > span {
+            cursor: pointer;
+            background-color: #fffee1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease; /* 平滑过渡效果 */
+        }
+
+        .tree li::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -20px;
+            width: 20px;
+            height: 1px;
+            background-color: #ccc;
+        }
+
+        .tree li::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -20px;
+            width: 1px;
+            height: 100%;
+            background-color: #ccc;
+        }
+        .tree > li::before, .tree > li::after {
+            display: none;
+        }
+        .tree li ul {
+            display: none;
+        }
+        .tree li.open > ul {
+            display: block;
+        }
+
+        .tree li span {
+            display: block;
+            padding: 5px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .tree li.level-1 {
+            background-color: #e0e0e0;
+            font-size: 18px;
+            color: #333;
+        }
+        .tree li.level-2 {
+            background-color: #d0d0d0;
+            font-size: 16px;
+            color: #444;
+        }
+        .tree li.level-3 {
+            background-color: #c0c0c0;
+            font-size: 14px;
+            color: #555;
+        }
+        .tree li.level-4 {
+            background-color: #b0b0b0;
+            font-size: 12px;
+            color: #666;
+        }
+
+        #item-list {
+            margin-top: 20px;
+        }
+
+        #item-list li {
+            margin: 5px 0;
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+
+        #item-list li.folder {
+            color: black;
+            text-decoration: none;
+        }
+
+      .file-management-container {
+        display: grid;
+        grid-template-columns: 25% 40% 25%;
+        gap: 5%;
+        align-items: start;
+        width: 100%;
+        padding: 20px;
+        background-color: #f0f0f0;
+    }
+
+    .function-area, .directory-tree-container, .suggestion-area {
+        padding: 15px;
+        background-color: #ffffff;
+        height: 100%;
+        text-align: center; /* 让按钮在容器中居中 */
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+
+    .function-area button {
+        display: inline-block; /* 保持按钮为块元素 */
+        margin: 10px 0; /* 增加按钮之间的上下间距 */
+        width: 70%; /* 设置固定宽度 */
+        padding: 10px;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .file-category .file-actions button,
+    .file-category button {
+        display: block;
+        width: 70%;
+        margin: 10px 0;
+        padding: 10px;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .dialog-box {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid #ccc; /* Base border color */
+      border-radius: 5px; /* Rounded corners */
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+      padding: 20px;
+      width: 30%;
+      max-height: 50vh; /* Maximum height for the dialog box */
+      overflow-y: auto; /* Enable vertical scrolling if content exceeds max-height */
+      z-index: 1000;
+      background: linear-gradient(to top left, #ffffff, #f5f5f5); /* Subtle gradient for background */
+    }
+
+    /* Overlay background */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 900;
+    }
+
+    /* Style for the hierarchy list */
+    .hierarchy ul {
+      list-style: none;
+      padding-left: 20px;
+    }
+
+    .hierarchy li {
+        cursor: pointer;
+        margin-bottom: 10px;
+        align-items: center;
+    }
+
+   .rounded-box {
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      padding: 5px;
+      background-color: #f9f9f9;
+      cursor: pointer;
+      font-size: 20px;
+      margin: 5px 0;
+       height: 6vh;
+      display: flex; /* Set .rounded-box as Flex container */
+      align-items: center; /* Center items vertically */
+      justify-content: space-between; /* Space items out horizontally */
+      position: relative; /* Make sure position is relative for triangle positioning */
+    }
+
+    .button-container {
+        display: flex;
+        gap: 10px;
+    }
+
+    .action-btn {
+        background-color: #f9f9f9; /* Gray color */
+        color: black;
+        padding: 5px 5px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bolder;
+        height: 100%; /* Adjust height as needed */
+        display: flex; /* Enable flexbox for centering */
+        align-items: center; /* Center text vertically */
+        justify-content: center; /* Center text horizontally */
+        transition: background-color 0.3s ease;
+    }
+
+    .action-btn:hover {
+        background-color: #989a9a;
+    }
+
+    .triangle {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 5px solid #333;
+        margin-right: 10px;
+        vertical-align: middle;
+        transition: transform 0.3s;
+    }
+
+    .collapsed {
+      transform: rotate(180deg);
+    }
+
+    .nested {
+      margin-left: 20px;
+      font-size: 14px;
+      display: none;
+    }
+
+    .active > .nested {
+      display: block;
+    }
+
+
+    h1 {
+        text-align: center;
+        font-family: "华文楷体", "SimKai", serif;
+        font-size: 30px;
+        color: black;
+        background-color: lightblue;
+        font-weight: bolder;
+    }
+
+    h2 {
+        font-family: "华文楷体", "SimKai", serif;
+        font-size: 25px;
+        margin-top: -15px;
+        margin-bottom: -5px;
+        color: black;
+        background-color: transparent;
+        font-weight: bolder;
+    }
+
+    h3 {
+        font-family: "华文楷体", "SimKai", serif;
+        font-size: 15px;
+        color: black;
+        background-color: transparent;
+        font-weight: bolder;
+        text-align: left;
+    }
+
+    .file-name-area, .classification-area {
+        margin-bottom: 10px;
+    }
+
+    .file-name-area {
+        background-color: #ffe8d6;
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    .classification-area {
+        background-color: #ffe8d6;
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+     .layer {
+            background-color: #e0f7da;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 10px;
+            height: 15vh;
+        }
+
+        /* 限制 layers-container 的高度并允许滚动 */
+        #layers-container {
+            max-height: 400px; /* 你可以根据需要调整高度 */
+            overflow-y: auto;
+            border: 1px solid #ccc; /* 增加边框，方便查看 */
+            padding: 1px;
+        }
+
+    .text-box {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .button-area button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .up-area {
+        display: flex;
+        justify-content: space-between; /* 左右分布内容 */
+        align-items: stretch; /* 让左右区域等高 */
+        width: 100%; /* 容器宽度 */
+        padding: 5px;
+        box-sizing: border-box;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        margin: auto;
+    }
+
+    /* 左侧内容区域样式 */
+    .left-area {
+        width: 70%;
+    }
+
+    /* 右侧按钮区域样式 */
+    .right-area {
+        display: flex;
+        flex-direction: column; /* 让按钮垂直排列 */
+        justify-content: center; /* 竖直居中 */
+        align-items: center; /* 水平居中 */
+        gap: 20px;
+        width: 25%;
+    }
+
+    .pagination-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5px;
+    }
+
+    .pagination-btn {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 0 5px;
+    }
+
+    .pagination-btn:hover {
+        background-color: #0056b3;
+    }
+
+    .pagination-numbers {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pagination-number {
+        background-color: #f1f1f1;
+        padding: 10px 15px;
+        margin: 0 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .pagination-number.active {
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+    }
+
+    .pagination-number:hover {
+        background-color: #007bff;
+        color: white;
+    }
+
+
+    .output-text {
+        width: 100%;
+        height: 100%;
+        border: none;
+        padding: 20px;
+        font-family: "华文楷体", "SimKai", serif;
+        font-size: 15px;
+        resize: none;
+        box-sizing: border-box;
+    }
+
+        .items-management-container {
+            display: grid;
+            grid-template-columns: repeat(2, 100%); /* 每个div占宽度的45% */
+            gap: 10%; /* 设置列间距 */
+            justify-content: space-between; /* 控制子元素水平对齐 */
+            align-items: center; /* 垂直居中 */
+            width: 100%;
+            max-width: 100%;
+            padding: 20px;
+            margin-top: 3%;
+            box-sizing: border-box;
+            background-color: #f0f0f0; /* 背景色用于可视化容器 */
+        }
+
+        .item-container {
+            width: 100%;
+            height: 80vh; /* 设置容器高度 */
+            padding: 25px;
+            box-sizing: border-box;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto; /* 使容器可上下滚动 */
+            margin: 0 auto;
+            font-family: "华文楷体", "SimKai", serif;
+            font-size: 20px;
+        }
+
+        .arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .arrow::after {
+            content: '➔';
+            font-size: 100px;
+            margin-left: 1px;
+            margin-right: 1px;
+        }
+        .table-container {
+            width: 100%;
+            height: 40vh; /* 设置容器高度 */
+            padding: 25px;
+            box-sizing: border-box;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto; /* 使容器可上下滚动 */
+            margin: 0 auto;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="overlay">
+        <div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div>
+    </div>
+    <h1> 移动项目 </h1>
+    <div class="row">
+        <div class="col-sm-1"></div>
+
+        <div class="col-sm-10">
+            <div class="tree-container">
+                <div class="container">
+                    <h2>目录树展示</h2>
+                    <button id="toggle-view">切换视图</button>
+                    <div class="tree" id="dynamic-tree"></div>
+                </div>
+
+                <div class="container">
+                    <h2>数据展示</h2>
+                    <ul id="item-list">
+                    </ul>
+                 </div>
+            </div>
+
+            <div class="file-management-container">
+                <!-- 1.功能区 -->
+                <div class="function-area">
+                    <h2>功能区</h2>
+                    <button class="btn btn-primary btn-lg btn-block" id="btn_file">文件选择</button>
+                    <input type="file" id="file_input" style="display: none;">
+                    <button class="btn btn-danger btn-lg btn-block" id="btn_judge">目录判断</button>
+                    <button class="btn btn-info btn-lg btn-block">导出数据</button>
+                    <button class="btn btn-success btn-lg btn-block" onclick="openDialog()">新增领域</button>
+                    <div class="overlay" id="overlay" onclick="closeDialog()"></div>
+                    <div class="dialog-box" id="dialogBox">
+                        <h2>目录树结构</h2>
+                        <div class="hierarchy" id="hierarchy"></div>
+                        <button onclick="closeDialog()" style="background-color: #dc3545">Close</button>
+                    </div>
+                </div>
+
+                <!-- 2.目录树分类区 -->
+                <div class="directory-tree-container">
+                    <h2>目录树分类</h2>
+                    <div class="up-area">
+                        <div class="left-area">
+                            <div class="file-name-area">
+                                <h3>文件名:</h3>
+                                <input type="text" id="file_name" class="text-box" readonly>
+                            </div>
+
+                            <!-- 分类体系区域 -->
+                            <div class="classification-area">
+                                <h3>分类体系:</h3>
+
+                                <!-- 第一层 -->
+                                <div style="display: none;">
+                                    <input type="text" id="output_text" class="text-box"placeholder="">
+                                </div>
+                                <!-- 占位符，更新下拉菜单的层次将替换此处 -->
+                                <div class="layer" id="layers-container"></div>
+{#                                <div class="layer">#}
+{#                                    <h3>第一层</h3>#}
+{#                                    <select class="dropdown">#}
+{#                                        <option value="category1">经济建设</option>#}
+{#                                        <option value="category2">政治建设</option>#}
+{#                                        <option value="category2">文化建设</option>#}
+{#                                        <option value="category2">生态文明建设</option>#}
+{#                                        <option value="category2">民生建设</option>#}
+{#                                    </select>#}
+{#                                </div>#}
+{#                            </div>#}
+                            </div>
+                        </div>
+
+                        <div class="right-area">
+                            <button class="btn btn-danger btn-lg btn-block" id="enableDropdownButton">修改</button>
+                            <button class="btn btn-success btn-lg btn-block" id="btn_move">移动</button>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- 分页区域 -->
+                       <div class="pagination-container">
+                            <button class="pagination-btn prev" onclick="changePage('prev')">Prev</button>
+                            <div id="pagination-numbers" class="pagination-numbers">
+                                <!-- 页码数字将通过 JavaScript 动态生成 -->
+                            </div>
+                            <button class="pagination-btn next" onclick="changePage('next')">Next</button>
+                       </div>
+                    </div>
+                </div>
+
+
+                <!-- 3.目录项修改建议区 -->
+                <div class="suggestion-area">
+                    <h2>目录项修改建议</h2>
+                    <input type="text" id="test" placeholder="">
+                </div>
+             </div>
+        </div>
+    </div>
+
+    <script>
+        let treeData = null;
+
+        // 在页面加载时获取目录结构
+        document.addEventListener("DOMContentLoaded", async function() {
+            try {
+                // 向后端FastAPI发送POST请求获取目录结构
+                const response = await fetch('http://127.0.0.1:8888/dir-level', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                const text = await response.json();
+                const directoryData = JSON.parse(text);
+                treeData = directoryData;
+                console.log(text);
+                const treeContainer = document.getElementById('dynamic-tree');
+                createTree(directoryData, treeContainer);
+            } catch (error) {
+                console.error('Error fetching directory structure:', error);
+            }
+        });
+
+        function createTree(data, parentElement, level = 1) {
+            const ul = document.createElement('ul');
+            parentElement.appendChild(ul);
+
+            for (const [key, value] of Object.entries(data)) {
+                const li = document.createElement('li');
+                li.classList.add(`level-${level}`);
+                li.setAttribute('data-folder', key);
+
+                const span = document.createElement('span');
+                span.textContent = key;
+                li.appendChild(span);
+                ul.appendChild(li);
+
+                if (typeof value === 'object' && value !== null && Object.keys(value).length > 0) {
+                    createTree(value, li, level + 1);
+                }
+            }
+        }
+
+        // 递归查找目标元素并返回路径
+        function findPath(obj, target, path = []) {
+            for (const key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    const newPath = path.concat(key); // 更新路径
+
+                    if (key === target) {
+                        return newPath; // 找到目标元素，返回路径
+                    }
+
+                    // 如果是对象，递归调用
+                    if (typeof obj[key] === 'object' && obj[key] !== null) {
+                        const result = findPath(obj[key], target, newPath);
+                        if (result) {
+                            return result; // 找到目标元素，返回结果
+                        }
+                    }
+                }
+            }
+            return null; // 如果未找到目标元素，返回 null
+        }
+
+        // 将事件绑定到父级容器，使用事件委托
+        document.getElementById('dynamic-tree').addEventListener('click', function (e) {
+            // 检查事件目标是否为 <span> 元素
+            if (e.target && e.target.tagName === 'SPAN') {
+                const li = e.target.parentElement;  // 获取对应的 <li> 元素
+                li.classList.toggle('open');  // 切换 'open' 类
+
+                // 获取 <li> 的 level 类名和 data-folder 属性
+                const folderName = li.getAttribute('data-folder').trim();  // 获取 data-folder 的文件夹路径
+                // 调用 fetchItems 函数，加载文件或文件夹内容
+                const params  = findPath(treeData, folderName);
+                fetchItems(params);
+                e.stopPropagation();  // 阻止事件传播，避免触发父元素的事件
+            }
+        });
+
+        let isTreeView = false;  // 视图状态变量
+         document.getElementById('toggle-view').addEventListener('click', function (e) {
+             const treeContainer = document.getElementById('dynamic-tree');
+             isTreeView = !isTreeView;
+             if(isTreeView) {
+                 // 切换为 D3.js 树状图
+                treeContainer.innerHTML = '';  // 清空目录树容器
+                createCollapsibleTree();  // 创建 D3.js 树状图
+             }else {
+                  treeContainer.innerHTML = '';  // 清空SVG内容
+                 createTree(treeData, treeContainer);  // 重新创建HTML目录树
+             }
+         });
+
+        // 将所有代码封装为一个函数
+        function createCollapsibleTree() {
+            {#const container = document.getElementById('dynamic-tree');#}
+            const width = 960;
+            const height = 800;
+
+            const svg = d3.select("#dynamic-tree")
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height);
+
+            const g = svg.append("g")
+                .attr("transform", "translate(40,0)");
+
+            const treeLayout = d3.tree().size([height, width - 300]);
+
+            let i = 0;
+
+            // 转换 JSON 数据为 D3 需要的层次结构
+            const root = d3.hierarchy(convertToD3Data("root", treeData));
+            root.x0 = height / 2;
+            root.y0 = 0;
+
+            // 初始化时折叠所有子节点
+            root.children.forEach(collapse);
+
+            update(root);
+
+            function update(source) {
+                const treeRoot = treeLayout(root);
+                const nodes = treeRoot.descendants();
+                const links = treeRoot.links();
+
+                nodes.forEach(d => d.y = d.depth * 200);  // 调整节点的水平间距
+
+                const node = g.selectAll('g.node')
+                    .data(nodes, d => d.id || (d.id = ++i));
+
+                const nodeEnter = node.enter().append('g')
+                    .attr('class', 'node')
+                    .attr("transform", d => `translate(${source.y0},${source.x0})`)
+                    .on('click', click);
+
+                nodeEnter.append('circle')
+                    .attr('class', 'node')
+                    .attr('r', 10)
+                    .style("fill", d => d._children ? "lightsteelblue" : "#fff");
+
+                nodeEnter.append('text')
+                    .attr("dy", ".35em")
+                    .attr("x", d => d.children || d._children ? -13 : 13)
+                    .attr("text-anchor", d => d.children || d._children ? "end" : "start")
+                    .text(d => d.data.name);
+
+                const nodeUpdate = nodeEnter.merge(node);
+
+                nodeUpdate.transition()
+                    .duration(200)
+                    .attr("transform", d => `translate(${d.y},${d.x})`);
+
+                nodeUpdate.select('circle.node')
+                    .attr('r', 10)
+                    .style("fill", d => d._children ? "lightsteelblue" : "#fff");
+
+                const nodeExit = node.exit().transition()
+                    .duration(200)
+                    .attr("transform", d => `translate(${source.y},${source.x})`)
+                    .remove();
+
+                nodeExit.select('circle')
+                    .attr('r', 1e-6);
+
+                nodeExit.select('text')
+                    .style('fill-opacity', 1e-6);
+
+                const link = g.selectAll('path.link')
+                    .data(links, d => d.target.id);
+
+                const linkEnter = link.enter().insert('path', "g")
+                    .attr("class", "link")
+                    .attr('d', d => {
+                        const o = {x: source.x0, y: source.y0};
+                        return diagonal(o, o);
+                    });
+
+                const linkUpdate = linkEnter.merge(link);
+
+                linkUpdate.transition()
+                    .duration(200)
+                    .attr('d', d => diagonal(d.source, d.target));
+
+                const linkExit = link.exit().transition()
+                    .duration(200)
+                    .attr('d', d => {
+                        const o = {x: source.x, y: source.y};
+                        return diagonal(o, o);
+                    })
+                    .remove();
+
+                nodes.forEach(d => {
+                    d.x0 = d.x;
+                    d.y0 = d.y;
+                });
+
+                function diagonal(s, d) {
+                    return `M ${s.y} ${s.x}
+                            C ${(s.y + d.y) / 2} ${s.x},
+                              ${(s.y + d.y) / 2} ${d.x},
+                              ${d.y} ${d.x}`;
+                }
+
+                function click(event, d) {
+                    const params  = findPath(treeData, d.data.name);
+                    fetchItems(params);
+                    if (d.children) {
+                        d._children = d.children;
+                        d.children = null;
+                    } else {
+                        d.children = d._children;
+                        d._children = null;
+                    }
+                    update(d);
+                }
+            }
+
+
+            function collapse(d) {
+                if (d.children) {
+                    d._children = d.children;
+                    d._children.forEach(collapse);
+                    d.children = null;
+                }
+            }
+
+            // 将原始 JSON 转换为 D3 可用的层次结构数据
+            function convertToD3Data(name, obj) {
+                const children = Object.keys(obj).map(key => {
+                    if (typeof obj[key] === 'object' && obj[key] !== null) {
+                        return convertToD3Data(key, obj[key]);
+                    }
+                    return { name: key };
+                });
+                return { name, children };
+            }
+        }
+
+        async function fetchItems(folderNames) {
+            try {
+                // 统一调用 /api/get-files 来获取文件
+                const endpoint = '/api/get-files';
+
+                // 将数组转换为 URL 编码的字符串
+                const folderParam = encodeURIComponent(JSON.stringify(folderNames));
+
+                // 向后端请求数据
+                const response = await fetch(`${endpoint}?folder=${folderParam}`);
+                const items = await response.json();
+
+                // 获取显示文件/文件夹列表的DOM元素
+                const itemList = document.getElementById('item-list');
+
+                // 清空上一次的列表
+                itemList.innerHTML = '';
+
+                // 遍历返回的文件
+                items.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item[0];
+
+                    // 点击时打开文件
+                    const filePath = folderNames.join('/') + '/' + item[1];
+                    li.onclick = () => openFile(filePath);
+
+                    itemList.appendChild(li);
+                });
+            } catch (error) {
+                console.error('Error fetching items:', error);
+            }
+        }
+
+        function openFile(filePath) {
+            // 打开文件
+            console.log(filePath);
+            window.open(`/files/${filePath}`, '_blank');
+        }
+
+
+        const totalPages = 5;  // 总页数
+        let currentPage = 1;    // 当前页码
+
+        window.onload = () => {
+            createPagination(totalPages, currentPage);
+        };
+
+        function createPagination(totalPages, currentPage) {
+            const paginationNumbers = document.getElementById('pagination-numbers');
+            paginationNumbers.innerHTML = '';  // 清空分页按钮
+
+            for (let i = 1; i <= totalPages; i++) {
+                const pageNumber = document.createElement('div');
+                pageNumber.className = 'pagination-number';
+                pageNumber.innerText = i;
+                pageNumber.onclick = () => changePage(i);
+
+                if (i === currentPage) {
+                    pageNumber.classList.add('active');
+                }
+
+                paginationNumbers.appendChild(pageNumber);
+            }
+        }
+
+        function changePage(page) {
+            if (page === 'prev') {
+                if (currentPage > 1) currentPage--;
+            } else if (page === 'next') {
+                if (currentPage < totalPages) currentPage++;
+            } else {
+                currentPage = page;
+            }
+
+            createPagination(totalPages, currentPage);  // 更新分页显示
+        }
+
+        document.getElementById('btn_file').addEventListener('click', function() {
+        document.getElementById('file_input').click(); // 触发文件选择对话框
+    });
+
+        // 文件上传
+        document.getElementById('file_input').addEventListener('change', function() {
+            var file = this.files[0];
+            if (file) {
+                document.getElementById('file_name').value = file.name; // 将文件名显示在输入框中
+                var formData = new FormData();
+                formData.append("file", file);
+
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '/upload', true);
+
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        alert('文件上传成功');
+                    } else {
+                        alert('文件上传失败');
+                    }
+                };
+
+                xhr.send(formData);
+            } else {
+                document.getElementById('file_name').value = '未选择文件';
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var btnFile = document.getElementById('btn_judge');
+            var overlay = document.querySelector('.overlay');
+            var fileNameInput = document.getElementById('file_name');
+            var outputText = document.getElementById('output_text');
+            {#var originItems = document.getElementById('origin_items');#}
+            {#var modifyItems = document.getElementById('modify_items');#}
+
+            btnFile.addEventListener('click', function() {
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '/process', true);
+                xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4) {
+                        overlay.style.display = 'none';
+                        if (xhr.status === 200) {
+                            var jsondata = JSON.parse(xhr.responseText);
+                            var cls = jsondata['class'];
+                            {#var origin = jsondata['origin'];#}
+                            {#var modify = jsondata['modify'];#}
+
+                            outputText.value = cls;
+                            setInputValueAndTrigger(cls);
+                            {#originItems.value = origin;#}
+                            {#modifyItems.value = modify;#}
+                        } else {
+                            console.log(xhr.responseText);
+                        }
+                    }
+                };
+
+                overlay.style.display = 'block';
+                var data = JSON.stringify({
+                    "input_file": fileNameInput.value
+                });
+
+                xhr.send(data);
+            });
+        });
+
+        function uploadFile() {
+            const formData = new FormData();
+            const fileInput = document.getElementById('file_input').files[0];
+            formData.append('file', fileInput);
+
+            fetch('/uploadfile/', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('tableContainer').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        document.getElementById('btn_move').addEventListener('click', function() {
+            var fileName = document.getElementById('file_name').value;
+            var outputText = document.getElementById('output_text').value;
+
+            console.log(fileName);
+            console.log(outputText);
+
+            if (!fileName || !outputText) {
+                alert('Please select a file and specify output text.');
+                return;
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/move-file', true);
+            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        alert('File moved successfully!');
+                    } else {
+                        console.error('Error moving file:', xhr.responseText);
+                    }
+                }
+            };
+
+            var data = JSON.stringify({ file_name: fileName, output_text: outputText });
+            xhr.send(data);
+        });
+
+        // 确定层次的函数，处理多个'-'代表不同层级
+        function determineDropdownLayers(inputText) {
+            // 正则表达式查找连续的'-'符号序列
+            const regex = /-+/g;
+            const matches = inputText.match(regex);
+
+            if (!matches) {
+                return 0; // 没有'-'表示没有层次
+            }
+
+            // 获取最大层次，连续的'-'数表示层次
+            return matches.length; // 返回层次的数量
+        }
+
+        // 根据层次动态更新HTML结构，并初始禁用下拉框
+        function updateDropdownLayers(inputText) {
+            const layersContainer = document.getElementById('layers-container');
+
+            // 清空容器
+            layersContainer.innerHTML = '';
+
+            // 根据输入文本划分层次内容
+            const layers = inputText.split(/-{1,}/).filter(layer => layer.trim() !== "");
+
+            // 动态生成下拉选项
+            layers.forEach((layer, index) => {
+                const layerDiv = document.createElement('div');
+                layerDiv.className = 'layerLevel';
+
+                // 直接设置内联样式，减少下拉列表之间的距离
+                layerDiv.style.marginBottom = '5px'; // 缩短下方的间距，减少层与层之间的距离
+
+                const layerTitle = document.createElement('h3');
+                layerTitle.textContent = `第${index + 1}层 - ${layer.trim()}`;
+
+                const selectElement = document.createElement('select');
+                selectElement.className = 'dropdown';
+
+                // 设置下拉框的固定宽度
+                selectElement.style.width = '200px'; // 设置每个下拉框的宽度为 200px
+
+                // 默认禁用下拉框
+                selectElement.disabled = true;
+
+                // 添加与当前层级对应的选项内容
+                const option1 = document.createElement('option');
+                option1.value = `category${index + 1}_1`;
+                option1.textContent = `${layer.trim()}`;
+
+                const option2 = document.createElement('option');
+                option2.value = `category${index + 1}_2`;
+                option2.textContent = `${layer.trim()}`;
+
+                const option3 = document.createElement('option');
+                option3.value = `category${index + 1}_3`;
+                option3.textContent = `${layer.trim()}`;
+
+                // 将选项添加到 select 元素
+                selectElement.appendChild(option1);
+                selectElement.appendChild(option2);
+                selectElement.appendChild(option3);
+
+                // 将标题和 select 添加到当前层的 div
+                layerDiv.appendChild(layerTitle);
+                layerDiv.appendChild(selectElement);
+
+                // 将当前层的 div 添加到层容器
+                layersContainer.appendChild(layerDiv);
+            });
+        }
+
+        // 启用下拉框的函数
+        function enableDropdowns() {
+            const dropdowns = document.querySelectorAll('select.dropdown');
+            dropdowns.forEach(dropdown => {
+                dropdown.disabled = false; // 移除禁用属性
+            });
+        }
+
+        // 设置隐藏的输入框的值，并手动触发事件
+        function setInputValueAndTrigger(inputText) {
+            const inputElement = document.getElementById('output_text');
+            inputElement.value = inputText;
+
+            // 动态更新层次布局
+            updateDropdownLayers(inputText);
+        }
+
+         document.getElementById('enableDropdownButton').addEventListener('click', enableDropdowns);
+
+
+
+    function createHierarchyElement(data) {
+      let ul = document.createElement('ul');
+
+      for (let key in data) {
+        let li = document.createElement('li');
+        let roundedBox = document.createElement('div');
+        roundedBox.classList.add('rounded-box');
+        roundedBox.innerHTML = `<span>${key}</span>`;
+
+       // Create buttons
+        let buttonContainer = document.createElement('div');
+        buttonContainer.classList.add('button-container');
+
+        let button1 = document.createElement('button');
+        button1.classList.add('action-btn');
+        button1.style.color = 'black';  // 设置字体颜色为黑色
+        button1.textContent = '...';
+        buttonContainer.appendChild(button1);
+
+        let button2 = document.createElement('button');
+        button2.classList.add('action-btn');
+        button2.style.color = 'black';  // 设置字体颜色为黑色
+        button2.textContent = '+';
+        buttonContainer.appendChild(button2);
+
+        roundedBox.appendChild(buttonContainer);
+
+        li.classList.add('expandable');
+
+        // Check if there are subtopics
+        if (Array.isArray(data[key]) && data[key].length === 0) {
+          li.appendChild(roundedBox); // No subtopics, just display the main item
+        } else {
+          let nested = createHierarchyElement(data[key]);  // Recursively create subtopics
+          nested.classList.add('nested');
+          li.appendChild(roundedBox);
+          li.appendChild(nested);
+        }
+
+        // Create a triangle icon and add it to the roundedBox
+        let triangle = document.createElement('span');
+        triangle.classList.add('triangle');
+        roundedBox.insertBefore(triangle, roundedBox.firstChild);
+
+        // Add click event for both triangle and box
+        roundedBox.onclick = function(event) {
+          if (event.target.closest('.button-container') || event.target.closest('.action-btn')) {
+              return;
+          }
+
+          event.stopPropagation();
+          li.classList.toggle('active');
+          let nested = li.querySelector('ul');
+          if (nested) {
+            nested.style.display = li.classList.contains('active') ? 'block' : 'none';
+          }
+          triangle.classList.toggle('collapsed');
+        };
+
+        // Initialize the display of nested items
+        let nested = li.querySelector('ul');
+        if (nested) {
+          nested.style.display = 'none'; // Hide nested items by default
+        }
+
+        ul.appendChild(li);
+      }
+
+      return ul;
+    }
+
+    // Function to open the dialog and display the hierarchy
+    function openDialog() {
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('dialogBox').style.display = 'block';
+
+        const hierarchyContainer = document.getElementById('hierarchy');
+        hierarchyContainer.innerHTML = '';  // Clear previous content
+        hierarchyContainer.appendChild(createHierarchyElement(treeData));  // Generate and display new hierarchy
+    }
+
+    // Function to close the dialog
+    function closeDialog() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('dialogBox').style.display = 'none';
+    }
+
+    </script>
+</body>
+
+</html>
